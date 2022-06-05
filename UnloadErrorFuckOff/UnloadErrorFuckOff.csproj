@@ -38,7 +38,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\ECommons\ECommons\ECommons.csproj" />
+	  <PackageReference Include="ExposedObject" Version="2.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
