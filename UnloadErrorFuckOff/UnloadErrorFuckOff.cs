@@ -38,9 +38,10 @@ namespace UnloadErrorFuckOff
                 {
                     var localPlugin = Exposed.From(t);
                     PluginLog.Information($"Plugin {localPlugin.Name}, state {localPlugin.State}");
-                    if (localPlugin.State.ToString() == "UnloadError")
+                    if (localPlugin.State.ToString() == "UnloadError" || localPlugin.State.ToString() == "LoadError"
+                         || localPlugin.State.ToString() == "DependencyResolutionFailed")
                     {
-                        PluginLog.Warning("Detected unload error state, let's fix it");
+                        PluginLog.Warning("Detected error state, let's fix it");
                         localPlugin.State = stateEnum.GetEnumValues().GetValue(0);
                         var manifest = Exposed.From(localPlugin.Manifest);
                         manifest.Disabled = true;

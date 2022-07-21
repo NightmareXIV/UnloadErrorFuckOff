@@ -3,7 +3,7 @@
   "Name": "UnloadErrorFuckOff",
   "InternalName": "UnloadErrorFuckOff",
   "AssemblyVersion": "9.0.0.0",
-  "Description": "A plugin to CLEAN THE FUCKING ANNOYING UNLOAD FAILED ERRORS, allowing you to reload plugin. EXTREMELY useful for developers.",
+  "Description": "[For plugin developers only] A plugin that clears off load and unload errors. Plugin development is made easy once again!",
   "ApplicableVersion": "any",
   "RepoUrl": "https://github.com/Eternita-S/UnloadErrorFuckOff",
   "DalamudApiLevel": 6,
