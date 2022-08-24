@@ -6,6 +6,6 @@
   "Description": "[For plugin developers only] A plugin that clears off load and unload errors. Plugin development is made easy once again!",
   "ApplicableVersion": "any",
   "RepoUrl": "https://github.com/Eternita-S/UnloadErrorFuckOff",
-  "DalamudApiLevel": 6,
+  "DalamudApiLevel": 7,
   "LoadPriority": 0
 }
