@@ -36,16 +36,18 @@ namespace UnloadErrorFuckOff
                 
                 foreach (var t in installedPlugins)
                 {
-                    var localPlugin = Exposed.From(t);
-                    PluginLog.Information($"Plugin {localPlugin.Name}, state {localPlugin.State}");
-                    if (localPlugin.State.ToString() == "UnloadError" || localPlugin.State.ToString() == "LoadError"
-                         || localPlugin.State.ToString() == "DependencyResolutionFailed")
+                    var localPlugin = (object)t;
+                    var state = localPlugin.GetType().GetProperty("State", BindingFlags.Public | BindingFlags.Instance).GetValue(localPlugin).ToString();
+                    PluginLog.Information($"Plugin {localPlugin.GetType().GetProperty("Name", BindingFlags.Public | BindingFlags.Instance).GetValue(localPlugin)}, state {state}");
+                    if (state == "UnloadError" || state == "LoadError"
+                         || state == "DependencyResolutionFailed")
                     {
                         PluginLog.Warning("Detected error state, let's fix it");
-                        localPlugin.State = stateEnum.GetEnumValues().GetValue(0);
-                        var manifest = Exposed.From(localPlugin.Manifest);
-                        manifest.Disabled = true;
-                        PluginLog.Information($"Plugin {localPlugin.Name} new state {localPlugin.State}");
+                        localPlugin.GetType().GetProperty("State", BindingFlags.Public | BindingFlags.Instance).SetValue(localPlugin, stateEnum.GetEnumValues().GetValue(0));
+                        var manifest = localPlugin.GetType().GetProperty("Manifest", BindingFlags.Public | BindingFlags.Instance).GetValue(localPlugin);
+                        manifest.GetType().GetProperty("Disabled", BindingFlags.Public | BindingFlags.Instance).SetValue(manifest, true);
+                        state = localPlugin.GetType().GetProperty("State", BindingFlags.Public | BindingFlags.Instance).GetValue(localPlugin).ToString();
+                        PluginLog.Information($"Plugin {localPlugin.GetType().GetProperty("Name", BindingFlags.Public | BindingFlags.Instance).GetValue(localPlugin)}, state {state}");
                     }
 
                 }
