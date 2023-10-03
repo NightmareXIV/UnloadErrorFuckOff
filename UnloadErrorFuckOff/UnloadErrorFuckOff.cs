@@ -1,6 +1,7 @@
 ﻿using Dalamud.Game.Command;
 using Dalamud.Logging;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 using ExposedObject;
 using System;
 using System.Linq;
@@ -11,11 +12,11 @@ namespace UnloadErrorFuckOff
     public class UnloadErrorFuckOff : IDalamudPlugin
     {
         private DalamudPluginInterface pi;
-        private CommandManager cmd;
+        private ICommandManager cmd;
 
         public string Name => "UnloadErrorFuckOff";
 
-        public UnloadErrorFuckOff(DalamudPluginInterface pi, CommandManager cmd)
+        public UnloadErrorFuckOff(DalamudPluginInterface pi, ICommandManager cmd)
         {
             this.pi = pi;
             this.cmd = cmd;

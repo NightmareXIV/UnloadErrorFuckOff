@@ -1,11 +1,10 @@
 ﻿{
-  "Author": "NightmareXIV",
-  "Name": "UnloadErrorFuckOff",
-  "InternalName": "UnloadErrorFuckOff",
-  "AssemblyVersion": "9.0.0.0",
-  "Description": "[For plugin developers only] A plugin that clears off load and unload errors. Plugin development is made easy once again!",
-  "ApplicableVersion": "any",
-  "RepoUrl": "https://github.com/NightmareXIV/UnloadErrorFuckOff",
-  "DalamudApiLevel": 8,
-  "LoadPriority": 0
+    "Author": "NightmareXIV",
+    "Name": "UnloadErrorFuckOff",
+    "InternalName": "UnloadErrorFuckOff",
+    "Description": "[For plugin developers only] A plugin that clears off load and unload errors. Plugin development is made easy once again!",
+    "Punchline": "[For plugin developers only] A plugin that clears off load and unload errors.",
+    "ApplicableVersion": "any",
+    "RepoUrl": "https://github.com/NightmareXIV/UnloadErrorFuckOff",
+    "LoadPriority": 0
 }
