@@ -6,5 +6,6 @@
     "Punchline": "[For plugin developers only] A plugin that clears off load and unload errors.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/NightmareXIV/UnloadErrorFuckOff",
-    "LoadPriority": 0
+    "LoadPriority": 0,
+    "DalamudApiLevel": 10
 }

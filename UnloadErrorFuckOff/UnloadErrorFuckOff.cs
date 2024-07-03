@@ -11,15 +11,17 @@ namespace UnloadErrorFuckOff
 {
     public class UnloadErrorFuckOff : IDalamudPlugin
     {
-        private DalamudPluginInterface pi;
+        private IDalamudPluginInterface pi;
         private ICommandManager cmd;
+        private IPluginLog PluginLog;
 
         public string Name => "UnloadErrorFuckOff";
 
-        public UnloadErrorFuckOff(DalamudPluginInterface pi, ICommandManager cmd)
+        public UnloadErrorFuckOff(IDalamudPluginInterface pi, ICommandManager cmd, IPluginLog log)
         {
             this.pi = pi;
             this.cmd = cmd;
+            this.PluginLog = log;
             pi.UiBuilder.OpenConfigUi += FuckOff;
             cmd.AddHandler("/fuckoff", new(delegate { FuckOff(); }));
         }
